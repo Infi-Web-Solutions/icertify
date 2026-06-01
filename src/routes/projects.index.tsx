@@ -148,7 +148,7 @@ function ProjectsIndex() {
   return (
     <AppShell>
 
-      <div className="px-8 py-6">
+      <div>
         {/* Header */}
         <p className="text-[10px] font-semibold uppercase tracking-wider text-neutral-500">Work · Practice</p>
         <h1 className="mt-1 text-[26px] font-semibold tracking-tight text-neutral-900">Projects</h1>

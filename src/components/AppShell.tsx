@@ -69,13 +69,13 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className="min-h-screen flex bg-neutral-100">
       {/* Sidebar */}
       <aside className="w-[240px] flex-shrink-0 bg-primary-500 text-white flex flex-col fixed inset-y-0 left-0">
-        <div className="px-5 py-5 border-b border-white/5">
+        <div className="px-5 py-3 border-b border-white/5">
           <img
             src={pbcLogo}
             alt="PBC"
-            className="h-8 w-auto brightness-0 invert"
+            className="h-10 w-auto brightness-0 invert"
           />
-          <p className="mt-2 text-[18px] font-bold tracking-tight text-white">iCertify</p>
+          <p className="mt-2 text-[16px] font-bold tracking-tight text-white">iCertify</p>
         </div>
 
 

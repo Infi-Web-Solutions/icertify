@@ -69,7 +69,7 @@ function ContactsPage() {
 
   return (
     <AppShell>
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1600px]">
         {/* Page header */}
         <div className="flex items-start justify-between gap-6 mb-6">
           <div>
