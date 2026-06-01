@@ -1,0 +1,84 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@theme {
+  --color-primary-100: #E8EBF2;
+  --color-primary-500: #071D49;
+  --color-primary-700: #1A3A7A;
+  --color-primary-900: #040F26;
+
+  --color-neutral-100: #F8F9FA;
+  --color-neutral-200: #E9ECEF;
+  --color-neutral-300: #DEE2E6;
+  --color-neutral-500: #ADB5BD;
+  --color-neutral-600: #6C757D;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343A40;
+
+  --color-danger: #B91C1C;
+  --color-danger-light: #F8D7DA;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html, body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--color-neutral-800);
+    background: var(--color-neutral-100);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum";
+  }
+}
+
+@layer components {
+  .field-label {
+    @apply block text-[12px] font-medium text-neutral-700 mb-1.5;
+  }
+  .field-input {
+    @apply w-full px-3.5 py-2.5 text-[14px] text-neutral-800
+           bg-white border border-neutral-300 rounded-[6px]
+           transition-colors duration-150
+           placeholder:text-neutral-500
+           focus:outline-none focus:border-primary-500 focus:ring-2;
+  }
+  .field-input:focus {
+    box-shadow: 0 0 0 3px rgba(7, 29, 73, 0.15);
+  }
+  .field-input-error {
+    @apply border-danger;
+  }
+  .btn-primary {
+    @apply w-full inline-flex items-center justify-center gap-2
+           px-5 py-3 rounded-[6px]
+           bg-primary-500 text-white text-[14px] font-medium leading-none
+           transition-colors duration-150
+           hover:bg-primary-700 active:bg-primary-900
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
+           disabled:bg-neutral-300 disabled:text-neutral-500 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply w-full inline-flex items-center justify-center gap-2
+           px-5 py-3 rounded-[6px]
+           bg-white text-neutral-800 text-[14px] font-medium leading-none
+           border border-neutral-300
+           transition-colors duration-150
+           hover:bg-neutral-100 hover:border-neutral-500
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  }
+  .auth-card {
+    @apply w-full max-w-[440px] bg-white rounded-[10px] border border-neutral-200
+           shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(16,24,40,0.08)]
+           p-8 sm:p-10;
+  }
+  .auth-link {
+    @apply text-primary-500 font-medium hover:text-primary-700 transition-colors;
+  }
+}
+
+.login-bg {
+  background:
+    radial-gradient(ellipse 80rem 50rem at 50% -10rem, rgba(7, 29, 73, 0.04), transparent 60%),
+    var(--color-neutral-100);
+}
