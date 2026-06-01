@@ -12,7 +12,16 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Force Nitro to build for Vercel (default is cloudflare-module; without this
-  // the Nitro deploy plugin is skipped outside the Lovable sandbox entirely).
-  nitro: { preset: "vercel" },
+  // Force Nitro to build for Vercel. The @lovable.dev/vite-tanstack-config package
+  // hard-codes output dirs to "dist/", overriding Nitro's vercel preset defaults
+  // (.vercel/output). We must pass the correct paths explicitly so Vercel's Build
+  // Output API v3 is populated correctly.
+  nitro: {
+    preset: "vercel",
+    output: {
+      dir: "{{ rootDir }}/.vercel/output",
+      serverDir: "{{ output.dir }}/functions/__server.func",
+      publicDir: "{{ output.dir }}/static",
+    },
+  },
 });
